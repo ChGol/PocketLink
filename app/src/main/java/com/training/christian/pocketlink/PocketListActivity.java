@@ -22,6 +22,9 @@ public class PocketListActivity extends AppCompatActivity {
         //Wyswietlanie elementow w pionie, jeden za drugim
         mList.setLayoutManager(new LinearLayoutManager(this));
 
+        iLinkDataBase dataBase = new SqlLiteLinkDatabase(this);
+        LinksAdapter adapter = new LinksAdapter(dataBase.getLinks());
 
+        mList.setAdapter(adapter);
     }
 }
